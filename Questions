@@ -1,0 +1,23 @@
+Hello,
+
+We are excited to have you participate in a hands-on test for the Platform Engineer role at our company. This test is designed to evaluate your understanding and practical knowledge of Docker, Kubernetes, Helm, GitHub, GitHub Actions, Node.js, MongoDB, and Redis. Please complete the following tasks within 2 hours:
+
+Docker:
+a. Create a Dockerfile for a simple Node.js application that connects to MongoDB and Redis.
+b. Create a docker-compose.yml file to start the Node.js application, MongoDB, and Redis as separate services.
+
+Kubernetes:
+a. Create a basic Kubernetes deployment YAML file for the Node.js application.
+b. Create a Kubernetes service YAML file to expose the Node.js application, and an Ingress YAML file to expose the service externally.
+
+Helm:
+Create a Helm chart for the Node.js application, including a values file with configurable parameters and templates for deployment, service, and ingress.
+
+GitHub and GitHub Actions:
+a. Create a new GitHub repository and push the Node.js application code, Dockerfile, docker-compose.yml, Kubernetes, and Helm files.
+b. Create a GitHub Actions workflow that builds and pushes the Docker image on every commit to the main branch, runs a basic test before building the image, and deploys the application to a Kubernetes cluster using the Helm chart after the image is pushed.
+
+Troubleshooting:
+Fix any issues encountered during the test, demonstrating your problem-solving skills and ability to work under pressure.
+
+Please submit your GitHub repository link containing the completed tasks within 2 hours from the receipt of this email. We will evaluate your submission based on your understanding of the technologies used, the quality of your solutions, and your ability to troubleshoot and fix issues.

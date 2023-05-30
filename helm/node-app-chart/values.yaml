@@ -1,0 +1,14 @@
+# Default values for the Node.js application
+replicaCount: 1
+image:
+  repository: your-docker-image-name
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  hostname: your-domain.com
