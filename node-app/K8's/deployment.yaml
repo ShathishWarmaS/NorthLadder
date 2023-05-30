@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: your-docker-image-name
+          image: your-docker-image-name #docker image
           ports:
             - containerPort: 3000
           env:

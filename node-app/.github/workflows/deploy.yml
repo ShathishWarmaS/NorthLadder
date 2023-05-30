@@ -1,0 +1,52 @@
+name: Deploy to EKS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+         # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v2
+         # Step 2: Run basic test
+      - name: Run basic test
+        run: |
+          # Add your test command here
+         # Step 3: Set up Docker
+      - name: Set up Docker
+        uses: docker/setup-docker@v1
+         # Step 4: Build and push Docker image
+      - name: Build and push Docker image
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          docker build -t your-docker-image-name .
+          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+          docker push your-docker-image-name
+        #Step 5: Configure AWS credentials
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: your-aws-region
+             # Step 6: Set up kubectl
+      - name: Set up kubectl
+        uses: steebchen/kubectl-setup@v1
+      # Step 7: Configure kubectl for EKS
+      - name: Configure kubectl for EKS
+        run: |
+          aws eks --region your-aws-region update-kubeconfig --name your-eks-cluster-name
+      # Step 8: Install Helm
+      - name: Install Helm
+        uses: azure/setup-helm@v1
+      # Step 9: Deploy to EKS
+      - name: Deploy to EKS
+        run: |
+          helm upgrade --install your-release-name ./path/to/helm/chart
