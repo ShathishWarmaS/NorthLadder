@@ -16,7 +16,8 @@ jobs:
          # Step 2: Run basic test
       - name: Run basic test
         run: |
-          # Add your test command here
+          echo "Hello World"
+          npm test
          # Step 3: Set up Docker
       - name: Set up Docker
         uses: docker/setup-docker@v1

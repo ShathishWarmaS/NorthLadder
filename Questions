@@ -15,7 +15,7 @@ Create a Helm chart for the Node.js application, including a values file with co
 
 GitHub and GitHub Actions:
 a. Create a new GitHub repository and push the Node.js application code, Dockerfile, docker-compose.yml, Kubernetes, and Helm files.
-b. Create a GitHub Actions workflow that builds and pushes the Docker image on every commit to the main branch, runs a basic test before building the image, and deploys the application to a Kubernetes cluster using the Helm chart after the image is pushed.
+b Create a GitHub Actions workflow that builds and pushes the Docker image on every commit to the main branch, runs a basic test before building the image, and deploys the application to a Kubernetes cluster using the Helm chart after the image is pushed.
 
 Troubleshooting:
 Fix any issues encountered during the test, demonstrating your problem-solving skills and ability to work under pressure.
